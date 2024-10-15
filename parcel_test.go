@@ -59,7 +59,7 @@ func TestAddGetDelete(t *testing.T) {
 	require.NoError(t, err)
 
 	parc, err := store.Get(id)
-	require.NotEmpty(t, err)
+	require.Equal(t, sql.ErrNoRows, err)
 	require.Empty(t, parc)
 }
 
